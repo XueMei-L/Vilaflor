@@ -1,29 +1,42 @@
 <template>
-  <div id="box">
-    <el-form
-      :model="ruleForm"
-      status-icon
-      :rules="rules"
-      ref="ruleForm"
-      label-width="80%"
-      class="demo-ruleForm"
-    >
-      <el-form-item label="accout" prop="name">
-        <el-input v-model="ruleForm.name"></el-input>
-      </el-form-item>
-      <el-form-item label="passwd" prop="pass">
-        <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="passwd again" prop="checkPass">
-        <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-      </el-form-item>
+  <div id="app">
+   <div class="login-page">
+      <transition name="fade">
+         <div v-if="!registerActive" class="wallpaper-login"></div>
+      </transition>
+      <div class="wallpaper-register"></div>
 
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
-  </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+               <div v-if="!registerActive" class="card login" v-bind:class="{ error: emptyFields }">
+                  <h1>Sign In</h1>
+                  <form class="form-group">
+                     <input v-model="emailLogin" type="email" class="form-control" placeholder="Email" required>
+                     <input v-model="passwordLogin" type="password" class="form-control" placeholder="Password" required>
+                     <input type="submit" class="btn btn-primary" @click="doLogin">
+                     <p>Don't have an account? <a href="#" @click="registerActive = !registerActive, emptyFields = false">Sign up here</a>
+                     </p>
+                     <p><a href="#">Forgot your password?</a></p>
+                  </form>
+               </div>
+
+               <div v-else class="card register" v-bind:class="{ error: emptyFields }">
+                  <h1>Sign Up</h1>
+                  <form class="form-group">
+                     <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
+                     <input v-model="passwordReg" type="password" class="form-control" placeholder="Password" required>
+                     <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirm Password" required>
+                     <input type="submit" class="btn btn-primary" @click="doRegister">
+                     <p>Already have an account? <a href="#" @click="registerActive = !registerActive, emptyFields = false">Sign in here</a>
+                     </p>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
 </template>
 <style>
 .demo-ruleForm {

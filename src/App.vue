@@ -1,32 +1,26 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link> |
-      <router-link to="/login">Login</router-link>
-    </div>
-    <home/>
-    <about/>
-    <login/>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+
+  <div id="nav"> 
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/login">Login</router-link>
   </div>
+
+  <router-view/>
 </template>
 
 <script>
-import { Home } from './views/Home.vue'
-import { About } from './views/About.vue'
-import { Login } from './views/Login.vue'
+//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    Home,
-    About,
-    Login
+    //HelloWorld
   }
 }
-
 </script>
-
 
 <style>
 #app {
@@ -35,15 +29,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-#nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>
