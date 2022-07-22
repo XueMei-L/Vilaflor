@@ -1,76 +1,96 @@
 <template>
-  <div>
-    <h3> Formulario de registro. </h3>
+<div>
+  <!-- Evitar errores de los codigos -->
+  <meta charset="utf-8">
+  
+  <!-- Titulo -->
+  <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="../register.css"> -->
+  <!-- El modelo del fondo -->
+  <div class="container">
+    <!-- Titulo - Tu mercado ideal -->
+    <span class= "tu_mercado_ideal">
+      <font face="Times New Roman">
+        <h1 align="left" ><i>Tu Mercado ideal<br> @vilaflor</i></h1>
+      </font>
+    </span>
+
+    <!-- Prueba01 -->
+    <span class="plantilla_login">
+      <form action="" class="login">
+        <h2><p style="color:black">Create an accout</p></h2>
+
+        <!-- Login with accout -->
+        <input type="text" placeholder="Username">
+        <input type="text" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+
+        <!-- button of login -->
+        <div>
+          <button class="Register" onclick="window.location.href='#'" type="button" id="add">Create Your Accout</button>
+          <!-- <input type="button" value="Create Your Accout" onclick=javascript:jump()> -->
+        </div>
+
+      </form> 
+    </span> 
   </div>
-
-  <!-- ¿Era poner en una tabla invisible los campos del formulario para alinearlos? -->
-
-  <span class="center">
-    <form>
-      <table>
-        <tr>
-          <div>
-            <td>
-              <label> Nombre </label>
-            </td>
-            <td>
-              <input type="text" name="nombre" placeholder="Su nombre de usuario"/>
-            </td>
-          </div>
-        </tr>
-
-        <tr>
-          <div>
-            <td>
-              <label> Email contacto </label>
-            </td>
-            <td>
-              <input type="text" name="correo" placeholder="Su dirección de email"/>
-            </td>
-          </div>
-        </tr>
-
-        <tr>
-          <div>
-            <td>
-              <label> Contraseña </label>
-            </td>
-            <td>
-              <input type="text" name="password" placeholder="Su contraseña a usar">
-            </td>
-          </div>
-        </tr>
-
-        <tr>
-          <div>
-            <td>
-              <label> Verificar contraseña </label>
-            </td>
-            <td>
-              <input type="text" name="password2" placeholder="Reescriba su contraseña">
-            </td>
-          </div>
-        </tr>
-
-        <tr>
-          <td>
-          </td>
-          <td>
-            <button type="submit"> Registrarse </button>
-          </td>
-        </tr>
-      </table>
-    </form>
-  </span>
+</div>
 </template>
+
+
 
 <style>
 
-.center {
+.plantilla_login {
+  position: absolute;
+  right: 15%;
+  top: 30%;
   display: inline-block;
   width: 350px;
   height: 400px;
-  background: rgb(	233	230	230);
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 25px gray;
+}
+
+.login input {
+  display: block;
+  top: 30%;
+  margin: 10px auto;
+  width: 250px;
+  height: 30px;
+
+}
+
+
+.Register{
+  display: block;
+  margin: 30px auto;
+  width: 260px;
+  height: 30px;
+}
+
+
+h1 {
+  font-size: 50px;
+}
+
+.tu_mercado_ideal {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+}
+
+.container {
+  object-position: 100px 50px;
+  position: left;
+  
+  display: inline-block;
+  width: 100%;
+  height: 600px;
+  background: #8ed6b8 
 }
 
 </style>
